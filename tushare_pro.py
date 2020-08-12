@@ -23,7 +23,7 @@ yesterday = (datetime.date.today() + datetime.timedelta(-1)).strftime('%Y%m%d')
 def getStockPrice(code, portfolio, date):
     close_price = pro.daily(ts_code=code, start_date=date, end_date=date)[['ts_code','close']]
     result = pd.merge(portfolio, close_price, on = 'ts_code')[['close']]
-    result.to_csv('/Users/zxx/github/stocks/stock.csv', index = False)
+    result.to_csv('./stock.csv', index = False)
     print(result)
 
 # getStockPrice(code_me,portfolio_me,today)
